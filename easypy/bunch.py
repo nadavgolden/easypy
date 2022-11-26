@@ -90,6 +90,11 @@ class Bunch(dict):
         return cls.from_dict(yaml.load(d))
 
     @classmethod
+    def from_toml(cls, d):
+        import toml
+        return cls.from_dict(toml.load(d))
+
+    @classmethod
     def from_xml(cls, d):
         import xmltodict
         return cls.from_dict(xmltodict.parse(d))
